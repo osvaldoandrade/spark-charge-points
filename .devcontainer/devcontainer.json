@@ -1,0 +1,21 @@
+{
+  "name": "Spark Java Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git-cli:1": {}
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "postCreateCommand": "mvn -q test -Dsurefire.useFile=false -Dsurefire.printSummary=true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.vscode-xml"
+      ]
+    }
+  }
+}
