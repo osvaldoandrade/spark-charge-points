@@ -60,11 +60,11 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.5</version>             <!-- >=3.0.0-M5 já resolve -->
+          <version>3.2.5</version>             
           <configuration>
-            <useFile>false</useFile>        <!-- manda logs p/ STDOUT -->
+            <useFile>false</useFile>        
             <printSummary>true</printSummary>
-            <reportFormat>plain</reportFormat>  <!-- “PASSED / FAILED” por teste -->
+            <reportFormat>plain</reportFormat>  
             <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
