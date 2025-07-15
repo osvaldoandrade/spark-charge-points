@@ -17,5 +17,9 @@ RUN curl -fsSL https://archive.apache.org/dist/spark/spark-${SPARK_VER}/spark-${
     | tar -xz -C /opt \
  && ln -s /opt/spark-${SPARK_VER}-bin-hadoop3 /opt/spark
 
+
 ENV SPARK_HOME=/opt/spark
+
+RUN apt-get update -y && apt-get install -y curl unzip maven
+
 ENV PATH=$SPARK_HOME/bin:$PATH
