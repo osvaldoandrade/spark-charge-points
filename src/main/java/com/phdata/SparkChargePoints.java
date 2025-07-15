@@ -14,7 +14,7 @@ public class SparkChargePoints {
             .appName("SparkChargePoints")
 	    .config("spark.ui.enabled", "false")
 	    .config("spark.sql.shuffle.partitions", "2")
-	    .config("spark.driver.memory", "512m")
+	    //.config("spark.driver.memory", "512m") for local tests as codility were running out of memory
 	    .getOrCreate();
 
     public static void main(String[] args) {
@@ -58,9 +58,9 @@ public class SparkChargePoints {
 
     // Saves in parquet
     private static void load(Dataset<Row> df) {
-        df.coalesce(1)               
-          .write()
-          .mode(SaveMode.Overwrite)
-          .parquet(output);
+	  //.coalesce(1) for local tests as codility were running out of memory              
+          df.write()
+            .mode(SaveMode.Overwrite)
+            .parquet(output);
     }
 }
